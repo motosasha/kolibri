@@ -1,0 +1,167 @@
+// В этом файле должны быть стили для БЭМ-блока price, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.price {
+	padding: 8.3333vw 0 18.0556vw;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		padding: 5.4687vw 0 0;
+		height: 31.25vw;
+	}
+	&__inner {
+		@media screen and (min-width: 992px) {
+			display: flex;
+			justify-content: space-between;
+			padding: 0 8.0729vw;
+		}
+	}
+	&__title {
+		color: var(--color_accent);
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 13.8889vw;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		@media screen and (min-width: 992px) {
+			font-size: 5.2083vw;
+			width: 27.9166vw;
+		}
+	}
+	&__row {
+		display: grid;
+		margin-top: 8.3333vw;
+		width: 100%;
+		@media screen and (min-width: 992px) {
+			display: flex;
+			gap: 1.0416vw;
+			margin: 0;
+			width: auto;
+		}
+	}
+	&__section {
+		margin: 0 calc(-1 * (var(--screen_margin-mobile) / 2));
+		width: 100vw;
+		@media screen and (min-width: 768px) {
+			margin: 0 calc(-1 * var(--screen_margin-tablet) / 2);
+		}
+		@media screen and (min-width: 992px) {
+			margin: 0;
+			width: auto;
+		}
+	}
+	&__scroll {
+		display: grid;
+		grid-template-columns: repeat(2, 67.5vw);
+		gap: 5.5556vw;
+		overflow: hidden;
+-webkit-overflow-scrolling: touch;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		padding: 0 calc(var(--screen_margin-mobile) / 2) 6.9444vw;
+		@media screen and (min-width: 768px) {
+			padding: 0 calc(var(--screen_margin-tablet) / 2) 6.9444vw;
+		}
+		@media screen and (min-width: 992px) {
+			display: flex;
+			gap: 1.0416vw;
+			overflow: visible;
+			padding: 0;
+		}
+	}
+	&__card {
+		background: var(--color_bg_white);
+		border: 1px solid rgba(241, 1, 50, 0.5);
+		border-radius: 5px;
+		box-shadow: var(--shadow_red_small);
+		display: flex;
+		flex-direction: column;
+		padding: 5.5556vw;
+		@media screen and (min-width: 992px) {
+			padding: 1.5625vw;
+			width: 15.1041vw;
+		}
+		&_alt {
+			border: none;
+			flex-direction: row;
+			gap: 4.1667vw;
+			@media screen and (min-width: 992px) {
+				align-items: center;
+				flex-direction: column;
+				gap: 1.3020vw;
+				justify-content: center;
+				padding: 1.5625vw 2.5vw 4.5vw;
+			}
+		}
+	}
+	&__card-title {
+		font-size: 5.5555vw;
+		font-weight: 600;
+		height: 13.8889vw;
+		line-height: 1.25;
+		margin: 0 0 11.1111vw;
+		@media screen and (min-width: 992px) {
+			font-size: 1.3020vw;
+			height: 4.6875vw;
+			line-height: 1.2;
+			margin: 0 0 1.5625vw;
+		}
+	}
+	&__card-block {
+		display: grid;
+		font-size: 4.1667vw;
+		font-weight: 300;
+		gap: 2.7778vw;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		@media screen and (min-width: 992px) {
+			font-size: 0.9375vw;
+			gap: 0.5208vw;
+		}
+		& + & {
+			margin-top: 8.3333vw;
+			@media screen and (min-width: 992px) {
+				margin-top: 1.302vw;
+			}
+		}
+		&:last-of-type {
+			margin-bottom: auto;
+		}
+	}
+	&__card-block-title {}
+	&__card-block-text {
+		font-weight: 600;
+	}
+	&__button {
+		display: block;
+		margin-top: 18.0556vw;
+		@media screen and (min-width: 992px) {
+			margin-top: 3.125vw;
+			padding: 0.7812vw;
+		}
+	}
+	&__icon {
+		flex: 0 0 auto;
+		height: 13.8889vw;
+		width: 13.8889vw;
+		@media screen and (min-width: 992px) {
+			height: 3.9062vw;
+			width: 3.9062vw;
+		}
+	}
+	&__card-text {
+		font-size: 4.1667vw;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1.33;
+		@media screen and (min-width: 992px) {
+			font-size: 1.0416vw;
+			line-height: 1.25;
+			text-align: center;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+}

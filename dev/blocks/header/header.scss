@@ -1,0 +1,111 @@
+// В этом файле должны быть стили для БЭМ-блока header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header {
+	backdrop-filter: var(--header_background-blur);
+	background: var(--header_background-color);
+	padding: 15px 0;
+	@media screen and (min-width: 992px) {
+		padding: 20px 0;
+	}
+	&::after {
+		background: rgba(255, 154, 180, 0.2);;
+		content: '';
+		display: block;
+		position: absolute;
+	}
+	&::after {
+		@media screen and (min-width: 992px) {
+			height: 100%;
+			right: 0;
+			top: 0;
+			width: 39.84375vw;
+		}
+	}
+
+	&__inner {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding-right: 5px;
+		position: relative;
+		z-index: 2;
+		@media screen and (min-width: 992px) {
+			padding: 0;
+		}
+	}
+	&__logo {
+		height: 50px;
+		width: 140px;
+		@media screen and (min-width: 992px) {
+			margin-right: 8.8541vw;
+		}
+	}
+	&__menu {
+		height: 30px;
+		width: 30px;
+		@media screen and (min-width: 992px) {
+			display: none;
+		}
+	}
+	&__menu-icon {
+		height: 30px;
+		width: 30px;
+	}
+	&__nav {
+		display: none;
+		@media screen and (min-width: 992px) {
+			display: flex;
+			gap: 2.6041vw;
+		}
+	}
+	&__nav-item {
+		color: inherit;
+		font-size: 1.0416vw;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: 0.02em;
+		text-decoration: none;
+		transition: color .25s ease;
+		&:hover {
+			color: var(--color_accent);
+		}
+	}
+	&__phone {
+		display: none;
+		@media screen and (min-width: 992px) {
+			color: inherit;
+			display: block;
+			font-size: 1.5625vw;
+			font-weight: 400;
+			letter-spacing: 0.02em;
+			line-height: 1;
+			margin-left: auto;
+			text-decoration: none;
+			transition: color .25s ease;
+			&:hover {
+				color: var(--color_accent);
+			}
+		}
+	}
+	&__button {
+		display: none;
+		@media screen and (min-width: 992px) {
+			background: var(--color_bg_white);
+			color: inherit;
+			display: block;
+			font-size: 1.3020vw;
+			margin-left: 3.9062vw;
+			padding: 1.0416vw 2.0833vw !important;
+			transition: background .25s ease,
+						color .25s ease,
+						transform .25s ease;
+			&:hover {
+				background: var(--color_bg_white);
+				color: var(--color_accent);
+				transform: translateY(-1px);
+			}
+		}
+	}
+}

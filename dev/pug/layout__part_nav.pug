@@ -1,0 +1,15 @@
+.nav
+	.nav__inner
+		svg.svg.nav__logo
+			use(xlink:href='img/svgSprite.svg#logo__kolibri')
+		.nav__block
+			a.nav__phone(href='tel:89616392985') +7 961 639 29 85
+			a.nav__button.button(data-hystmodal="#callback") Заказать звонок
+		nav.nav__links
+			a.nav__links-item(href='#about') О клубе
+			a.nav__links-item(href='#trener') Тренер
+			a.nav__links-item(href='#price') Цены
+			a.nav__links-item(href='#reviews') Отзывы
+			a.nav__links-item(href='#contacts') Контакты
+		+socials(['vk'], 'nav')
+

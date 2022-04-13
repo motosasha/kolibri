@@ -1,0 +1,19 @@
+//- Все примеси в этом файле должны начинаться c имени блока (socials)
+
+mixin socials(items, mod, mix)
+	.socials(class='socials_' + mod, class= mix)
+		if items.includes('ph')
+			a.socials__item(href='tel:89616392985')
+				svg.svg.socials__icon
+					use(xlink:href='img/svgSprite.svg#icon__phone')
+				span.socials__text +7 961 639 29 85
+		if items.includes('vk')
+			a.socials__item(href='https://vk.com/pro_schoolkolibri', target='_blanc')
+				svg.svg.socials__icon
+					use(xlink:href='img/svgSprite.svg#icon__social_vk')
+				span.socials__text schoolbaburina.gym
+		if items.includes('ig')
+			a.socials__item(href='https://www.instagram.com/pro_schoolkolibri.gymnastics', target='_blanc')
+				svg.svg.socials__icon
+					use(xlink:href='img/svgSprite.svg#icon__social_ig')
+				span.socials__text pro_schoolkolibri

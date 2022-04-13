@@ -1,0 +1,40 @@
+// В этом файле должны быть стили для БЭМ-блока socials, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.socials {
+	--font_size: 4.1667vw;
+	--icon_size: 6.9444vw;
+	display: grid;
+	gap: 4.1667vw;
+	@media screen and (min-width: 992px) {
+		--font_size: 1.0416vw;
+		--icon_size: 1.5625vw;
+
+		gap: 0.7812vw;
+	}
+	&_nav {
+		@media screen and (min-width: 768px) {
+			--font_size: 2.7778vw;
+		}
+	}
+	&__item {
+		align-items: center;
+		display: flex;
+		gap: 4.1667vw;
+		text-decoration: none;
+		@media screen and (min-width: 768px) {
+			gap: 0.7812vw;
+		}
+	}
+	&__icon {
+		height: var(--icon_size);
+		width: var(--icon_size);
+	}
+	&__text {
+		color: var(--color_text);
+		font-size: var(--font_size);
+		letter-spacing: 0.02em;
+		line-height: 1;
+	}
+}

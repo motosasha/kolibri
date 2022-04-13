@@ -1,0 +1,138 @@
+// В этом файле должны быть стили для БЭМ-блока reviews, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.reviews {
+	padding: 8.3333vw 0 0;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		min-height: 36.4583vw;
+		padding: 5.4687vw 0 0;
+	}
+	&__inner {
+		position: relative;
+		@media screen and (min-width: 992px) {
+			padding: 0 8.0729vw;
+		}
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			height: 100vw;
+			top: 6vw;
+			transform: translateX(-4vw);
+			width: calc((100vw - var(--screen_margin-mobile)) * .75 - 1.3889vw + (var(--screen_margin-mobile) / 2));
+			@media screen and (min-width: 768px) {
+				width: calc((100vw - var(--screen_margin-tablet)) * .75 - 1.3889vw + (var(--screen_margin-tablet) / 2));
+			}
+			@media screen and (min-width: 992px) {
+				height: 14.0625vw;
+				left: -2.75vw;
+				top: 2.3437vw;
+				transform: none;
+				width: 39.8437vw;
+			}
+		}
+		&::after {}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__title {
+		color: var(--color_accent);
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 13.8889vw;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		@media screen and (min-width: 992px) {
+			font-size: 5.2083vw;
+			width: 27.9166vw;
+		}
+	}
+	&__slider {
+		margin: 4.1667vw calc(-1 * (var(--screen_margin-mobile) / 2)) 0;
+		padding: 0 0 25vw;
+		width: 100vw;
+		@media screen and (min-width: 768px) {
+			margin: 4.1667vw calc(-1 * (var(--screen_margin-tablet) / 2)) 0;
+		}
+		@media screen and (min-width: 992px) {
+			margin: 0;
+			padding: 0 0 4.9479vw;
+			width: 100%;
+			.swiper-pagination {
+				bottom: 1vw !important;
+			}
+		}
+	}
+	&__slide {
+		padding: 9.7222vw calc(var(--screen_margin-mobile) / 2) 0;
+		@media screen and (min-width: 768px) {
+			padding: 9.7222vw calc(var(--screen_margin-tablet) / 2) 0;
+		}
+		@media screen and (min-width: 992px) {
+			padding: 2.6041vw 1.0416vw 0 2.6041vw;
+		}
+	}
+	&__tile {
+		background: var(--color_bg_white);
+		border-radius: 5px;
+		box-shadow: var(--shadow_red_xs);
+		height: 100%;
+		padding: 0 4.1667vw 13.8889vw 5.5556vw;
+		width: calc(100vw - var(--screen_margin-mobile));
+		@media screen and (min-width: 768px) {
+			width: calc(100vw - var(--screen_margin-tablet));
+		}
+		@media screen and (min-width: 992px) {
+			display: flex;
+			padding: 1.0416vw 3.125vw 2.0833vw 0;
+			width: 36vw;
+		}
+	}
+	&__img {
+		border-radius: 5px;
+		display: block;
+		height: auto;
+		transform: translateY(-9.7222vw);
+		width: 67.5vw;
+		@media screen and (min-width: 992px) {
+			height: 15.1041vw;
+			transform: translateX(-2.0833vw);
+			width: 15.1041vw;
+		}
+	}
+	&__info {
+		display: flex;
+		gap: 4.1667vw;
+		@media screen and (min-width: 992px) {
+			flex-direction: column;
+			gap: 1vw;
+		}
+	}
+	&__icon {
+		flex: 0 0 auto;
+		height: 13.8889vw;
+		width: 13.8889vw;
+		@media screen and (min-width: 992px) {
+			height: 2.6041vw;
+			width: 2.6041vw;
+		}
+	}
+	&__text {
+		font-size: 3.8889vw;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1.33;
+		@media screen and (min-width: 992px) {
+			font-size: 0.9375vw;
+		}
+	}
+}

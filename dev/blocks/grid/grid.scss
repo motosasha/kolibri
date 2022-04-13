@@ -1,0 +1,23 @@
+// В этом файле должны быть стили для БЭМ-блока grid, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$screen-m:                     0 !default;
+$screen-t:                     768px !default;
+$screen-d:                     992px !default;
+
+.grid {
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--container_m);
+	z-index: 2;
+
+	@media screen and (min-width: $screen-t) {
+		width: var(--container_t);
+	}
+	@media screen and (min-width: $screen-d) {
+		width: var(--container_d);
+	}
+}
+

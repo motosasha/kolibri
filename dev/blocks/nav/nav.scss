@@ -1,0 +1,64 @@
+// В этом файле должны быть стили для БЭМ-блока nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.nav {
+	background: var(--color_bg_white);
+	height: 100%;
+	padding: 5.5555vw 4.1666vw 6.9444vw;
+	width: 69.4444vw;
+	&__inner {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	&__logo {
+		height: 13.8889vw;
+		margin-bottom: 5.5555vw;
+		width: 38.8889vw;
+		@media screen and (min-width: 768px) {
+			height: 50px;
+			width: 140px;
+		}
+	}
+	&__block {
+		display: grid;
+		gap: 4.1667vw;
+	}
+	&__phone {
+		align-self: center;
+		color: var(--color_text);
+		font-size: 5.5556vw;
+		letter-spacing: 0.02em;
+		line-height: 100%;
+		text-align: center;
+		text-decoration: none;
+		@media screen and (min-width: 768px) {
+			font-size: 4.1667vw;
+		}
+	}
+	&__button {
+		padding: 2.7778vw 4.1666vw;
+		@media screen and (min-width: 768px) {
+			font-size: 2.7778vw;
+		}
+	}
+	&__links {
+		display: grid;
+		gap: 8.3333vw;
+		margin: auto;
+		@media screen and (min-width: 768px) {
+			gap: 5.5555vw;
+		}
+	}
+	&__links-item {
+		color: inherit;
+		font-size: 4.1666vw;
+		text-align: center;
+		text-decoration: none;
+		@media screen and (min-width: 768px) {
+			font-size: 2.7778vw;
+		}
+	}
+}

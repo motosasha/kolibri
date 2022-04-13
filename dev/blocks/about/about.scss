@@ -1,0 +1,144 @@
+// В этом файле должны быть стили для БЭМ-блока about, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.about {
+	padding: 20.8333vw 0;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		height: 52.0833vw;
+		padding: 2.6041vw 0 0;
+	}
+	&__inner {
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {}
+		&::after {
+			bottom: 0;
+			height: 111.1111vw;
+			right: 0;
+			width: 11.1111vw;
+			@media screen and (min-width: 992px) {
+				bottom: -19.7916vw;
+				height: 31.25vw;
+				width: 2.0833vw;
+			}
+		}
+	}
+	&__title {
+		color: rgba(0, 0, 0, .5);
+		font-size: 2.7777vw;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		line-height: 1.5;
+		margin: 0;
+		text-transform: uppercase;
+		@media screen and (min-width: 992px) {
+			font-size: 0.7812vw;
+		}
+	}
+	&__subtitle {
+		color: var(--color_accent);
+		display: block;
+		font-family: var(--font_secondary);
+		font-size: 22.2222vw;
+		font-weight: 400;
+		line-height: 1;
+		margin-top: 2.7777vw;
+		text-transform: none;
+		@media screen and (min-width: 992px) {
+			font-size: 6.25vw;
+			margin-top: 1.5625vw;
+			transform: translateX(-.25vw);
+		}
+	}
+	&__text {
+		font-size: 3.8888vw;
+		font-weight: 300;
+		line-height: 1.42;
+		letter-spacing: 0.02em;
+		margin: 2.7777vw 0 8.3333vw;
+		padding-left: calc((100% - 16.6666vw) / 4 + 5.5555vw);
+		position: relative;
+		@media screen and (min-width: 992px) {
+			font-size: 1.0416vw;
+			line-height: 2;
+			margin: 0 0 2.3437vw;
+			padding-left: 6.25vw;
+			width: 45vw;
+		}
+		&::before {
+			border: .5px solid var(--color_black);
+			content: '';
+			display: block;
+			left: 0;
+			opacity: 0.25;
+			position: absolute;
+			top: 2.7777vw;
+			width: 16.6666vw;
+			@media screen and (min-width: 992px) {
+				top: 1.025vw;
+				width: 3.125vw;
+			}
+		}
+	}
+	&__list {
+		display: grid;
+		grid-gap: 6.9444vw;
+		margin: 0;
+		padding: 0 calc((100% - 16.6666vw) / 4 + 5.5555vw);
+		@media screen and (min-width: 992px) {
+			grid-gap: 2.6041vw 0.7812vw;
+			grid-template-columns: 1fr 1fr 1fr;
+			padding: 0 0 0 6.25vw;
+			width: 45vw;
+		}
+	}
+	&__li {
+		display: grid;
+		font-size: 4.1666vw;
+		font-weight: 300;
+		grid-gap: 2.7778vw;
+		letter-spacing: 0.02em;
+		line-height: 1.33;
+		@media screen and (min-width: 992px) {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			font-size: 0.8854vw;
+			grid-gap: 0.7812vw;
+			letter-spacing: 0.02em;
+			line-height: 1.28;
+			text-align: center;
+		}
+	}
+	&__icon {
+		height: 13.8889vw;
+		width: 13.8889vw;
+		@media screen and (min-width: 992px) {
+			justify-self: center;
+			height: 2.6041vw;
+			width: 2.6041vw;
+		}
+	}
+	&__image {
+		display: none;
+		@media screen and (min-width: 992px) {
+			border-radius: 5px;
+			display: block;
+			left: 14.2187vw;
+			position: absolute;
+			width: 23.1770vw;
+		}
+	}
+	&__info {
+		@media screen and (min-width: 992px) {
+			padding: 7.2916vw 0 0 42.4479vw;
+		}
+	}
+}

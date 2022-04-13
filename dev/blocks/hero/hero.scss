@@ -1,0 +1,197 @@
+// В этом файле должны быть стили для БЭМ-блока hero, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hero {
+	padding-top: 80px;
+	@media screen and (min-width: 992px) {
+		padding-top: 130px;
+		height: 52.0833vw;
+	}
+	&__inner {
+		position: relative;
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			height: 136.1111vw;
+			transform: translateX(calc(-1 * (var(--screen_margin-mobile) / 2)));
+			width: calc((100vw - var(--screen_margin-mobile)) / 2 - 2.7778vw + (var(--screen_margin-mobile)/ 2));
+			@media screen and (min-width: 768px) {
+				transform: translateX(-4vw);
+				width: calc((100vw - var(--screen_margin-tablet)) / 2 - 2.7778vw + (var(--screen_margin-tablet)/ 2));
+			}
+			@media screen and (min-width: 992px) {
+				height: 52.0833vw;
+				left: 8.0729vw;
+				top: 4.1666vw;
+				transform: none;
+				width: 31.25vw;
+			}
+		}
+		&::after {
+			@media screen and (min-width: 992px) {
+				height: 41.6666vw;
+				right: -25px;
+				top: -130px;
+				width: 39.84375vw;
+			}
+			@media screen and (min-width: 1280px) {
+				height: 41.6666vw;
+				right: -40px;
+				top: -130px;
+				width: 39.84375vw;
+			}
+		}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__circle {
+		margin-top: 6.9444vw;
+		position: absolute;
+		transform: translateX(calc(-1 * var(--screen_margin-mobile)));
+		@media screen and (min-width: 768px) {
+			transform: translateX(-17vw);
+		}
+		@media screen and (min-width: 992px) {
+			left: 12.1354vw;
+			margin: 0;
+			top: 22vw;
+			transform: none;
+			z-index: 5;
+		}
+	}
+	&__circle svg {
+		animation: rotating 25s linear infinite;
+		height: 27.7778vw;
+		width: 27.7778vw;
+		@media screen and (min-width: 992px) {
+			height: 8.0729vw;
+			width: 8.0729vw;
+		}
+	}
+	&__image {
+		display: flex;
+		justify-content: flex-end;
+		@media screen and (min-width: 992px) {
+			position: absolute;
+			width: 100%;
+		}
+	}
+	&__image img {
+		aspect-ratio: 1.7133;
+		object-fit: cover;
+		object-position: center 30%;
+		border-radius: 5px 0 0 5px;
+		display: block;
+		height: auto;
+		margin-top: 6.9444vw;
+		transform: translateX(calc(var(--screen_margin-mobile) / 2));
+		width: 71.3888vw;
+		@media screen and (min-width: 768px) {
+			transform: translateX(5vw);
+		}
+		@media screen and (min-width: 992px) {
+			aspect-ratio: 0.7100;
+			border-radius: 5px;
+			margin-top: 1.3020vw;
+			transform: none;
+			width: 31.25vw;
+		}
+	}
+	&__title {
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 12.5vw;
+		line-height: .9;
+		letter-spacing: 0.01em;
+		margin: 9.7222vw 0;
+		span {
+			display: block;
+		}
+		@media screen and (min-width: 768px) {
+			font-size: 12vw;
+		}
+		@media screen and (min-width: 992px) {
+			font-size: 7.8125vw;
+			left: 15.7812vw;
+			margin: 0 0 2.3437vw;
+			padding: 8.0729vw 0 0;
+			span + span {
+				margin-left: 13.125vw;
+			}
+		}
+
+
+	}
+	&__subtitle {
+		font-family: var(--font_primary);
+		font-size: 4.1666vw;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		@media screen and (min-width: 992px) {
+			font-size: 1.5625vw;
+		}
+	}
+	&__info {
+		background: var(--color_bg_white);
+		padding: 5.5555vw 4.1666vw 1.3888vw;
+		@media screen and (min-width: 992px) {
+			height: 12.7604vw;
+			left: 16.1458vw;
+			padding: 1.5625vw 1.5625vw 0 12.7604vw;
+			width: 40.3645vw;
+		}
+	}
+	&__list {
+		display: grid;
+		gap: 2.7777vw;
+		list-style: none;
+		margin: 0 0 8.3333vw;
+		padding: 0;
+		@media screen and (min-width: 992px) {
+			gap: 0.7812vw;
+			margin: 0 0 3.125vw;
+		}
+	}
+	&__li {
+		align-items: center;
+		display: flex;
+		font-size: 4.1666vw;
+		font-weight: 300;
+		gap: 2.7778vw;
+		letter-spacing: 0.02em;
+		line-height: 1.33;
+		@media screen and (min-width: 992px) {
+			font-size: 1.0416vw;
+			gap: 0.5208vw;
+		}
+		strong {
+			font-weight: 600;
+		}
+		img {
+			display: block;
+			height: 5.5555vw;
+			width: 5.5555vw;
+			@media screen and (min-width: 992px) {
+				height: 1.5625vw;
+				width: 1.5625vw;
+			}
+		}
+	}
+	&__button {
+		display: block;
+		margin: 0 2vw;
+		@media screen and (min-width: 992px) {
+			margin: 0;
+			width: 23.6458vw;
+		}
+	}
+}

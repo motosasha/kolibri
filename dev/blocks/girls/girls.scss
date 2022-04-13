@@ -1,0 +1,99 @@
+// В этом файле должны быть стили для БЭМ-блока girls, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.girls {
+	padding: 6.9444vw 0 0;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		height: 52.0833vw;
+		padding: 5.4687vw 0 0;
+	}
+	&__inner {
+		position: relative;
+		@media screen and (min-width: 992px) {
+			padding: 0 8.0729vw;
+		}
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {}
+		&::after {
+			height: 50vw;
+			right: -4vw;
+			top: 6vw;
+			width: 50vw;
+			@media screen and (min-width: 992px) {
+				height: 52.0833vw;
+				top: -5.4687vw;
+				right: -40px;
+				width: 33.3333vw;
+			}
+		}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__title {
+		color: var(--color_accent);
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 13.8889vw;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		@media screen and (min-width: 992px) {
+			font-size: 5.2083vw;
+		}
+	}
+	&__slider {
+		margin: 0 calc(-1 * var(--screen_margin-mobile) / 2);
+		padding: 5.5556vw 0 30.5556vw;
+		width: 100vw;
+		@media screen and (min-width: 768px) {
+			margin: 0 calc(-1 * var(--screen_margin-tablet) / 2);
+		}
+		@media screen and (min-width: 992px) {
+			margin: 0;
+			padding: 2.6041vw 0  7.8125vw;
+			width: 100%;
+		}
+		.swiper-slide-shadow-left,
+		.swiper-slide-shadow-right {
+			background-image: none;
+		}
+	}
+	&__slide {
+		background: var(--color_bg_white);
+		box-shadow: var(--shadow_red_small);
+		padding: 3.5vw;
+		height: 83.3333vw;
+		width: 83.3333vw;
+		@media screen and (min-width: 992px) {
+			box-shadow: none;
+			height: 31.25vw;
+			padding: 1.3020vw;
+			width: 31.25vw;
+			&.swiper-slide-next,
+			&.swiper-slide-prev,
+			&.swiper-slide-active {
+				box-shadow: var(--shadow_red_small);
+			}
+		}
+		img {
+			border-radius: 5px;
+			display: block;
+			height: auto;
+			width: 76.3889vw;
+			@media screen and (min-width: 992px) {
+				height: 28.6458vw;
+				width: 28.6458vw;
+			}
+		}
+	}
+}

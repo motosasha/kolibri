@@ -1,0 +1,140 @@
+// В этом файле должны быть стили для БЭМ-блока faq, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.faq {
+	padding: 8.3333vw 0 34.7222vw;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		padding: 5.4687vw 0 1.8229vw;
+	}
+	&__inner {
+		@media screen and (min-width: 992px) {
+			display: flex;
+			justify-content: space-between;
+			padding: 0 8.0729vw;
+		}
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			@media screen and (min-width: 992px) {
+				height: 26.0416vw;
+				left: 0;
+				top: 21.6145vw;
+				width: 33.3333vw;
+			}
+		}
+		&::after {
+			height: 115vw;
+			right: 0;
+			top: -30vw;
+			width: 22.2222vw;
+			@media screen and (min-width: 992px) {
+				height: 31.5104vw;
+				top: -14.0625vw;
+				width: 41.4062vw;
+			}
+		}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__title {
+		color: var(--color_accent);
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 13.8889vw;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		@media screen and (min-width: 992px) {
+			font-size: 5.2083vw;
+			width: 31.25vw;
+		}
+	}
+	&__list {
+		display: grid;
+		gap: 2.7778vw;
+		margin-top: 8.3333vw;
+		@media screen and (min-width: 992px) {
+			gap: 1.0416vw;
+			margin: 0;
+			width: 39.3229vw;
+		}
+	}
+	&__item {
+		background: var(--color_bg_white);
+		box-shadow: var(--shadow_red_small);
+		border-radius: 5px;
+	}
+	&__header {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		font-size: 4.1667vw;
+		font-weight: 600;
+		justify-content: space-between;
+		line-height: 120%;
+		padding: 5.5555vw;
+		@media screen and (min-width: 992px) {
+			font-size: 1.302vw;
+			padding: 1.5625vw 2.6041vw;
+		}
+		&_active {}
+	}
+	&__icon {
+		display: block;
+		flex: 0 0 auto;
+		height: 9.7222vw;
+		margin-left: 4.1667vw;
+		transition: transform .5s ease-in-out;
+		width: 9.7222vw;
+		@media screen and (min-width: 992px) {
+			height: 2.6041vw;
+			width: 2.6041vw;
+		}
+	}
+	&__header_active &__icon {
+		transform: rotate(315deg);
+	}
+	&__block {
+		max-height: 0;
+		overflow: hidden;
+		transition: .5s;
+	}
+	&__answer {
+		font-size: 4.1667vw;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 150%;
+		padding: 0 5.5555vw 5.5555vw;
+		@media screen and (min-width: 992px) {
+			font-size: 1.0416vw;
+			padding: 0 2.6041vw 2.0833vw;
+		}
+	}
+
+	&__circle {
+		display: none;
+		@media screen and (min-width: 992px) {
+			display: block;
+			left: 29.25vw;
+			position: absolute;
+			top: 17.55vw;
+			right: auto;
+		}
+	}
+	&__circle svg {
+		@media screen and (min-width: 992px) {
+			animation: rotating 25s linear infinite;
+			height: 8.0729vw;
+			width: 8.0729vw;
+		}
+	}
+}

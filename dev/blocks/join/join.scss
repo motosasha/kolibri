@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока join, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.join {
+	padding: 0 0 22.2222vw;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		height: 44.2708vw;
+		padding: 0.7812vw 0 0;
+	}
+	&__inner {
+		@media screen and (min-width: 992px) {
+			display: flex;
+			gap: 1.0416vw;
+			padding: 0 8.0729vw;
+		}
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			height: 105.5556vw;
+			left: 0;
+			top: -13.8889vw;
+			width: 22.2222vw;
+			@media screen and (min-width: 992px) {
+				display: none;
+			}
+		}
+		&::after {}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__title {
+		font-family: var(--font_secondary);
+		font-size: 12.5vw;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		@media screen and (min-width: 992px) {
+			font-size: 3.9062vw;
+			width: 31.25vw;
+		}
+		em {
+			color: var(--color_accent);
+			font-style: normal;
+		}
+	}
+	&__circle {
+		position: absolute;
+		right: -4.1667vw;
+		top: 4.1667vw;
+		transform: translateX(calc(-1 * var(--screen_margin-mobile)));
+		@media screen and (min-width: 768px) {
+			transform: translateX(calc(-1 * var(--screen_margin-tablet)));
+		}
+		@media screen and (min-width: 992px) {
+			display: none;
+		}
+	}
+	&__circle svg {
+		animation: rotating 25s linear infinite;
+		height: 27.7778vw;
+		width: 27.7778vw;
+		@media screen and (min-width: 992px) {
+			height: 8.0729vw;
+			width: 8.0729vw;
+		}
+	}
+	&__form {
+		margin-top: 22.2222vw;
+		@media screen and (min-width: 992px) {
+			margin-top: 10.4166vw;
+			width: 23.177vw;
+		}
+	}
+}

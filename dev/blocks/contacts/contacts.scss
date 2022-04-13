@@ -1,0 +1,114 @@
+// В этом файле должны быть стили для БЭМ-блока contacts, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.contacts {
+	padding: 8.3333vw 0 6.9444vw;
+	position: relative;
+	@media screen and (min-width: 992px) {
+		height: 46.0937vw;
+		padding: 7.0312vw 0 0;
+	}
+	&__inner {
+		@media screen and (min-width: 992px) {
+			padding: 0 8.0729vw;
+		}
+		&::before,
+		&::after {
+			background: var(--back_elements_background);
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			bottom: 0;
+			height: 41.6667vw;
+			left: 0;
+			width: 100vw;
+			@media screen and (min-width: 992px) {
+				height: 14.8437vw;
+				width: 25.26vw;
+			}
+		}
+		&::after {
+			@media screen and (min-width: 992px) {
+				height: 31.25vw;
+				right: 0;
+				top: -19.0104vw;
+				width: 41.4062vw;
+			}
+		}
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__title {
+		color: var(--color_accent);
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		font-size: 13.8889vw;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		@media screen and (min-width: 992px) {
+			font-size: 3.9062vw;
+			margin-bottom: 2.6041vw;
+			width: 31.25vw;
+		}
+	}
+	&__map {
+		background: #000;
+		height: 69.4444vw;
+		margin: 4.1667vw calc(-1 * var(--screen_margin-mobile) / 2);
+		width: 100vw;
+		@media screen and (min-width: 768px) {
+			margin: 4.1667vw calc(-1 * var(--screen_margin-tablet) / 2);
+		}
+		@media screen and (min-width: 992px) {
+			bottom: 0;
+			height: 41.6666vw;
+			margin: 0;
+			position: absolute;
+			right: 0;
+			width: 57.552vw;
+		}
+	}
+	&__card {
+		background: var(--color_bg_white);
+		box-shadow: var(--shadow_red_small);
+		border-radius: 5px;
+		padding: 5.5555vw 5.5555vw 6.9444vw;
+		@media screen and (min-width: 992px) {
+			min-height: 23.4375vw;
+			padding: 2.0833vw;
+			width: 23.177vw;
+		}
+	}
+	&__card-title {
+		font-size: 4.1667vw;
+		font-weight: 600;
+		line-height: 1.2;
+		margin-bottom: 4.1667vw;
+		@media screen and (min-width: 992px) {
+			font-size: 1.302vw;
+			margin-bottom: 1.5625vw;
+		}
+	}
+	&__address {
+		font-size: 4.1667vw;
+		font-style: normal;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1.23;
+		margin-bottom: 6.9444vw;
+		@media screen and (min-width: 992px) {
+			font-size: 1.0416vw;
+			margin-bottom: 2.3437vw;
+		}
+		span {
+			white-space: nowrap;
+		}
+	}
+	&__socials {}
+}
