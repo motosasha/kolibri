@@ -1,12 +1,12 @@
 {
-  "name": "akme",
+  "name": "kolibri",
   "version": "1.0.0",
-  "description": "akme",
+  "description": "kolibri",
   "author": "Alexander Motorygin",
   "license": "WTFPL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/motosasha/akme"
+    "url": "https://github.com/motosasha/kolibri"
   },
   "scripts": {
     "start": "gulp",
