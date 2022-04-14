@@ -35,12 +35,15 @@
 			padding: 0;
 		}
 	}
-	&__logo {
-		height: 50px;
-		width: 140px;
+	&__logotype {
+		cursor: pointer;
 		@media screen and (min-width: 992px) {
 			margin-right: 8.8541vw;
 		}
+	}
+	&__logo {
+		height: 50px;
+		width: 140px;
 	}
 	&__menu {
 		height: 30px;

@@ -53,18 +53,13 @@
 		}
 	}
 	&__circle {
-		margin-top: 6.9444vw;
+		margin-top: 8vw;
 		position: absolute;
-		transform: translateX(calc(-1 * var(--screen_margin-mobile)));
-		@media screen and (min-width: 768px) {
-			transform: translateX(-17vw);
-		}
+		z-index: 5;
 		@media screen and (min-width: 992px) {
 			left: 12.1354vw;
 			margin: 0;
 			top: 22vw;
-			transform: none;
-			z-index: 5;
 		}
 	}
 	&__circle svg {

@@ -38,6 +38,7 @@
 .slider-arrows__prev {
 	cursor: pointer;
 	height: 1.0416vw;
+	outline: none;
 	width: 2.6562vw;
 	&:active {
 		opacity: .5;
@@ -46,6 +47,7 @@
 .slider-arrows__next {
 	cursor: pointer;
 	height: 1.0416vw;
+	outline: none;
 	width: 5.2083vw;
 	&:active {
 		opacity: .5;

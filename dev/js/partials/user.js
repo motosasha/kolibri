@@ -44,6 +44,7 @@ window.onload = function() {
 		slidesPerView: 'auto',
 		slideClass: 'girls__slide',
 		loop: true,
+		slideToClickedSlide: true,
 		coverflowEffect: {
 			rotate: 0,
 			stretch: 100,
@@ -123,4 +124,11 @@ window.onload = function() {
 			mask: '+{7} (000) 000-00-00',
 		});
 	}
+
+	// logo scroll to top
+	let logotype = document.querySelector('.header__logotype')
+	logotype.addEventListener('click', function(e) {
+		e.preventDefault();
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	})
 };
